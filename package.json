@@ -1,0 +1,9 @@
+{
+    "name" : "@kronos-integration/serice-bullmq",
+    "main" : "./src/service-bullmq.mjs",
+
+    "dependencies" : {
+        "@kronos-integration/serice" : "",
+        "bullmq" : "^1.8.7"
+    }
+}
