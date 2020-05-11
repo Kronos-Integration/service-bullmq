@@ -1,9 +1,43 @@
 {
-    "name" : "@kronos-integration/serice-bullmq",
-    "main" : "./src/service-bullmq.mjs",
-
-    "dependencies" : {
-        "@kronos-integration/serice" : "",
-        "bullmq" : "^1.8.7"
-    }
+  "name": "@kronos-integration/serice-bullmq",
+  "version": "0.0.0-semantic-release",
+  "sideEffects": false,
+  "type": "module",
+  "main": "./src/service-bullmq.mjs",
+  "exports": {
+    ".": "./src/service-bullmq.mjs",
+    "./": "./"
+  },
+  "description": "service around bullmq",
+  "license": "BSD-2-Clause",
+  "scripts": {
+    "cover": "--overwrite-- c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 2m && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
+    "test": "ava --timeout 2m",
+    "docs": "--overwrite-- documentation readme ./src/service-bullmq.mjs --section=API",
+    "lint": "--overwrite-- documentation lint ./src/service-bullmq.mjs"
+  },
+  "dependencies": {
+    "@kronos-integration/serice": "",
+    "bullmq": "^1.8.7"
+  },
+  "devDependencies": {
+    "c8": "^7.1.2",
+    "ava": "^3.8.2",
+    "documentation": "^13.0.0",
+    "semantic-release": "^17.0.7"
+  },
+  "engines": {
+    "node": ">=14.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kronos-Integration/service-bullmq.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kronos-Integration/service-bullmq/issues"
+  },
+  "homepage": "https://github.com/Kronos-Integration/service-bullmq#readme",
+  "template": {
+    "inheritFrom": "arlac77/template-kronos-module"
+  }
 }
