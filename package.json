@@ -38,6 +38,9 @@
   },
   "homepage": "https://github.com/Kronos-Integration/service-bullmq#readme",
   "template": {
-    "inheritFrom": "arlac77/template-kronos-module"
+    "inheritFrom": [
+      "arlac77/template-github-action",
+      "arlac77/template-kronos-module"
+    ]
   }
 }
