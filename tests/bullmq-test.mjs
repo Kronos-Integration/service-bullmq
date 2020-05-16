@@ -4,10 +4,11 @@ import { ServiceBullMQ } from "@kronos-integration/service-bullmq";
 
 const config = {
   name: "bullmq",
-  type: ServiceBullMQ
+  type: ServiceBullMQ,
+  url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`
 };
 
-test("service-bullmq service entpoint", async t => {
+test("service-bullmq queue entpoint", async t => {
   const sp = new StandaloneServiceProvider();
   const admin = await sp.declareService(config);
   await admin.start();

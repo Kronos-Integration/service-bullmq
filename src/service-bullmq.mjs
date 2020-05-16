@@ -16,7 +16,7 @@ export class ServiceBullMQ extends Service {
       createAttributes({
         url: {
           description: "public key to check token against",
-          default: "redis://127.0.0.1:6379'",
+          default: "redis://127.0.0.1:6379",
           mandatory: true,
           type: "url"
         }
