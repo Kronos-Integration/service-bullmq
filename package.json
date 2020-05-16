@@ -1,5 +1,5 @@
 {
-  "name": "@kronos-integration/serice-bullmq",
+  "name": "@kronos-integration/service-bullmq",
   "version": "0.0.0-semantic-release",
   "sideEffects": false,
   "type": "module",
