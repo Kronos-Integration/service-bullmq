@@ -3,22 +3,14 @@ name: CI
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    # Service containers to run with `runner-job`
     services:
-      # Label used to access the service container
       redis:
-        # Docker Hub image
         image: redis
-        # Set health checks to wait until redis has started
         options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+          --health-cmd "redis-cli ping" --health-interval 10s --health-timeout
+          5s --health-retries 5
         ports:
-          # Maps port 6379 on service container to the host
-          - 6379:6379
+          - '6379:6379'
     strategy:
       matrix:
         node-version:
@@ -46,10 +38,9 @@ jobs:
       - run: npm run build --if-present
       - run: npm run cover --if-present
         env:
-          # The hostname used to communicate with the Redis service container
           REDIS_HOST: localhost
-          # The default Redis port
-          REDIS_PORT: 6379
+          REDIS_PORT: '6379'
+      - run: npm run cover --if-present
       - name: Release
         uses: actions/setup-node@v1
       - run: npx semantic-release
