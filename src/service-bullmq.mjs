@@ -1,5 +1,6 @@
+import { Service } from "@kronos-integration/service";
 import { mergeAttributes, createAttributes } from "model-attributes";
-import { Queue, Worker } from "bullmq";
+//import { Queue, Worker } from "bullmq";
 import { QueueEndpoint } from "./queue-endpoint.mjs";
 
 export class ServiceBullMQ extends Service {
