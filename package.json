@@ -5,8 +5,7 @@
   "type": "module",
   "main": "./src/service-bullmq.mjs",
   "exports": {
-    ".": "./src/service-bullmq.mjs",
-    "./": "./"
+    ".": "./src/service-bullmq.mjs"
   },
   "description": "service around bullmq",
   "keywords": [
