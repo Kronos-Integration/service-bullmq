@@ -1,16 +1,8 @@
 name: CI
 'on': push
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    services:
-      redis:
-        image: redis
-        options: >-
-          --health-cmd "redis-cli ping" --health-interval 10s --health-timeout
-          5s --health-retries 5
-        ports:
-          - '6379:6379'
     strategy:
       matrix:
         node-version:
@@ -18,8 +10,6 @@ jobs:
           - 15.0.1
     steps:
       - uses: actions/checkout@v2
-      - name: checkout
-        uses: actions/checkout@v2
       - name: Cache node modules
         uses: actions/cache@v1
         env:
@@ -40,14 +30,18 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
       - run: npm run cover --if-present
-        env:
-          REDIS_HOST: localhost
-          REDIS_PORT: '6379'
-      - run: npm run cover --if-present
-      - name: Release
-        uses: actions/setup-node@v1
+  release:
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.14.0
+      - run: npm install
       - run: npx semantic-release
         env:
-          CI: true
+          CI: 'true'
           NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
