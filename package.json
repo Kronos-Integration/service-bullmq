@@ -1,6 +1,9 @@
 {
   "name": "@kronos-integration/service-bullmq",
   "version": "0.0.0-semantic-release",
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": false,
   "type": "module",
   "main": "./src/service-bullmq.mjs",
@@ -10,6 +13,12 @@
   "description": "service around bullmq",
   "keywords": [
     "kronos-service"
+  ],
+  "contributors": [
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
   ],
   "license": "BSD-2-Clause",
   "scripts": {
