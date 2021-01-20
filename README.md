@@ -19,11 +19,23 @@ service around bullmq
 
 ### Table of Contents
 
--   [endpointFactoryFromConfig](#endpointfactoryfromconfig)
-    -   [Parameters](#parameters)
--   [name](#name)
 -   [QueueEndpoint](#queueendpoint)
+    -   [Parameters](#parameters)
+-   [endpointFactoryFromConfig](#endpointfactoryfromconfig)
     -   [Parameters](#parameters-1)
+-   [name](#name)
+
+## QueueEndpoint
+
+**Extends SendEndpoint**
+
+Endpoint to link against a bullmq queue
+
+### Parameters
+
+-   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** endpoint name
+-   `owner` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** owner of the endpoint
+-   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
 
 ## endpointFactoryFromConfig
 
@@ -40,18 +52,6 @@ Returns **Class** QueueEndpoints if name stats with queue.
 ## name
 
 Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 'http'
-
-## QueueEndpoint
-
-**Extends SendEndpoint**
-
-Endpoint to link against a bullmq queue
-
-### Parameters
-
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** endpoint name
--   `owner` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** owner of the endpoint
--   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
 
 # install
 
