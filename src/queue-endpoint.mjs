@@ -1,4 +1,5 @@
 import { SendEndpoint } from "@kronos-integration/endpoint";
+import { Queue, Worker } from "bullmq";
 
 /**
  * Endpoint to link against a bullmq queue

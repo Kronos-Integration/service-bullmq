@@ -5,17 +5,26 @@ import { ServiceBullMQ } from "@kronos-integration/service-bullmq";
 const config = {
   name: "bullmq",
   type: ServiceBullMQ,
-  url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`
+  url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
+  endpoints: {
+    "queues.q1": {}
+  }
 };
 
-test("service-bullmq queue entpoint", async t => {
+test("service-bullmq livecycle", async t => {
   const sp = new StandaloneServiceProvider();
-  const admin = await sp.declareService(config);
-  await admin.start();
+  const bull = await sp.declareService(config);
+  await bull.start();
 
-  t.is(admin.state, "running");
+  t.is(bull.state, "running");
+  t.true(bull.url.startsWith("redis://"));
 
-  let response = await admin.endpoints["queues.q1"].receive();
+  const q1 = bull.endpoints["queues.q1"];
+  t.is(q1.name, "queues.q1");
 
-  t.is(response, true);
+  q1.send("hello");
+
+  //t.is(q1.s, "queues.q1");
+
+  //t.is(response, true);
 });
