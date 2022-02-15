@@ -39,7 +39,7 @@ Endpoint to link against a bullmq queue
 
 ## endpointFactoryFromConfig
 
-on demand create QueueEndpoints
+On demand create QueueEndpoints
 
 ### Parameters
 
@@ -51,7 +51,7 @@ Returns **Class** QueueEndpoints if name stats with queue.
 
 ## name
 
-Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 'http'
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 'bullmq'
 
 # install
 
