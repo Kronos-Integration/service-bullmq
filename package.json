@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@kronos-integration/service": "^10.4.23",
-    "bullmq": "^1.85.2",
+    "bullmq": "^1.85.4",
     "model-attributes": "^4.1.17"
   },
   "devDependencies": {
