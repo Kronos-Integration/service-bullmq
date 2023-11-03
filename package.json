@@ -27,7 +27,7 @@
     "lint:docs": "documentation lint ./src/**/*.mjs"
   },
   "dependencies": {
-    "@kronos-integration/service": "^10.4.50",
+    "@kronos-integration/service": "^10.4.51",
     "bullmq": "^4.12.7",
     "model-attributes": "^4.2.2"
   },
