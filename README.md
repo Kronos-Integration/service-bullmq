@@ -1,7 +1,4 @@
-[![npm](https://img.shields.io/npm/v/@kronos-integration/service-bullmq.svg)](https://www.npmjs.com/package/@kronos-integration/service-bullmq)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![bundlejs](https://deno.bundlejs.com/?q=@kronos-integration/service-bullmq\&badge=detailed)](https://bundlejs.com/?q=@kronos-integration/service-bullmq)
-[![downloads](http://img.shields.io/npm/dm/@kronos-integration/service-bullmq.svg?style=flat-square)](https://npmjs.org/package/@kronos-integration/service-bullmq)
 [![GitHub Issues](https://img.shields.io/github/issues/Kronos-Integration/service-bullmq.svg?style=flat-square)](https://github.com/Kronos-Integration/service-bullmq/issues)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FKronos-Integration%2Fservice-bullmq%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/Kronos-Integration/service-bullmq/goto)
 [![Styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
