@@ -1,5 +1,5 @@
 import { Service } from "@kronos-integration/service";
-import { mergeAttributes, createAttributes } from "model-attributes";
+import { prepareAttributesDefinitions, url_attribute } from "pacc";
 import { QueueEndpoint } from "./queue-endpoint.mjs";
 
 export class ServiceBullMQ extends Service {
@@ -10,19 +10,17 @@ export class ServiceBullMQ extends Service {
     return "bullmq";
   }
 
-  static get configurationAttributes() {
-    return mergeAttributes(
-      Service.configurationAttributes,
-      createAttributes({
-        url: {
-          description: "bull connection",
-          default: "redis://127.0.0.1:6379",
-          mandatory: true,
-          type: "url"
-        }
-      })
-    );
-  }
+  static attributes = prepareAttributesDefinitions(
+    {
+      url: {
+        ...url_attribute,
+        description: "bull connection",
+        default: "redis://127.0.0.1:6379",
+        mandatory: true
+      }
+    },
+    Service.attributes
+  );
 
   /**
    * On demand create QueueEndpoints
