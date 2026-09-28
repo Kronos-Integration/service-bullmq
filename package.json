@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@kronos-integration/service": "^15.7.32",
-    "bullmq": "^6.3.8",
+    "bullmq": "^6.3.9",
     "pacc": "^11.17.6"
   },
   "devDependencies": {
